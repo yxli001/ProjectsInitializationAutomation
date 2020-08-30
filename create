@@ -1,0 +1,16 @@
+#!/bin/bash
+# Simple Project Initialization Automation Script
+
+cd
+python3 [the path to "create.py"] "$1"
+cd [The directory where you usually put your projects]
+mkdir $1
+cd $1
+touch README.md
+git init
+git add .
+git commit -m "initial commit"
+git remote add origin https://github.com/[your GitHub Username]/$1.git
+git branch -M master
+git push -u origin master
+code .
